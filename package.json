@@ -1,0 +1,36 @@
+{
+	"name": "astro-jp-service-site",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"test": "echo \"No tests yet\"",
+		"ci": "biome ci . --error-on-warnings",
+		"format": "biome format --write .",
+		"lint": "biome lint --write . --error-on-warnings",
+		"check": "biome check --write .",
+		"shadcn:add": "pnpm dlx shadcn@2.1.8 add"
+	},
+	"dependencies": {
+		"@astrojs/react": "^4.2.0",
+		"@astrojs/tailwind": "^6.0.0",
+		"@radix-ui/react-slot": "^1.1.1",
+		"@tailwindcss/vite": "^4.0.1",
+		"astro": "^5.2.0",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.0.1",
+		"tailwindcss": "^4.0.1",
+		"tailwindcss-animate": "^1.0.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3"
+	}
+}
