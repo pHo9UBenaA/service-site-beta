@@ -102,7 +102,7 @@ import { Card } from 'src/components/ui/card';
 
 export default function About() {
 	return (
-		<section className='flex flex-col gap-10 md:gap-15 px-10 md:px-15 py-15 md:py-20 bg-linear-to-t from-pink-100 to-white dark:from-[#4b4447] dark:to-[#4c4c4c]'>
+		<section className='flex flex-col gap-10 md:gap-15 px-10 md:px-15 py-15 md:py-20 bg-linear-to-t from-[#fde1ee] to-white dark:from-[#4b4447] dark:to-[#4c4c4c]'>
 			<h2 className='text-center text-gray-600 dark:text-gray-300 tracking-wide'>
 				( ABOUT )
 			</h2>

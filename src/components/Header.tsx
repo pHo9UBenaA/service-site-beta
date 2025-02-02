@@ -34,6 +34,7 @@ export default function Header() {
 					size='icon'
 					onClick={toggleDarkMode}
 					className='mr-2'
+					aria-label='Toggle Dark Mode'
 				>
 					{isDarkMode ? <Sun strokeWidth={3} /> : <Moon strokeWidth={3} />}
 				</Button>
@@ -46,6 +47,7 @@ export default function Header() {
 							size='icon'
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
 							className='md:hidden'
+							aria-label='Menu'
 						>
 							<Menu strokeWidth={3} />
 						</Button>
