@@ -1,6 +1,8 @@
 ---
 import 'src/styles/global.css';
 
+import Header from 'src/components/Header';
+
 const { lang, title, description, author } = Astro.props;
 ---
 
@@ -24,6 +26,7 @@ const { lang, title, description, author } = Astro.props;
 		<meta name="author" content={author} />
 	</head>
 	<body>
+		<Header client:visible />
 		<slot />
 	</body>
 </html>
