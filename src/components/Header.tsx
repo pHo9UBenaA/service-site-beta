@@ -1,4 +1,4 @@
-import { Menu } from 'lucide-react';
+import { Menu, Moon, Sun } from 'lucide-react';
 import { useState } from 'react';
 import astroLogo from 'src/assets/astro.svg';
 import { Button } from 'src/components/ui/button';
@@ -15,16 +15,28 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from 'src/components/ui/sheet';
+import { useDarkMode } from 'src/hooks/useDarkMode';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 	return (
-		<header className='fixed z-50 bg-white/10 backdrop-blur-sm rounded-md start-5 end-5 top-6'>
+		<header className='fixed z-50 bg-white/10 dark:bg-gray-50/10 backdrop-blur-2xl rounded-md start-5 end-5 top-6'>
 			<div className='flex items-center justify-between p-3'>
 				<a href='/'>
-					<img src={astroLogo.src} className='px-2 h-10' alt='Astro Homepage' />
+					<img src={astroLogo.src} className='px-2 h-10' alt="Astro's Logo" />
 				</a>
+
+				{/* Toggle Dark Mode */}
+				<Button
+					variant='secondary'
+					size='icon'
+					onClick={toggleDarkMode}
+					className='mr-2'
+				>
+					{isDarkMode ? <Sun strokeWidth={3} /> : <Moon strokeWidth={3} />}
+				</Button>
 
 				{/* Mobile Menu */}
 				<Sheet>

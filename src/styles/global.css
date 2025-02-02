@@ -55,6 +55,7 @@
 
   button,
   a {
-    @apply cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200;
+    @apply cursor-pointer;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-200;
   }
 }

@@ -24,9 +24,24 @@ const { lang, title, description, author } = Astro.props;
 		<meta property="og:image" content={Astro.url + '/ogp.png'} />
 
 		<meta name="author" content={author} />
+
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+
+		<script>
+			// TODO: まだチラつく。useDarkModeにも同様の記述があるのでDRYに
+			(function() {
+				const e = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				const o = localStorage.getItem('darkMode');
+				const t = 'system' === o || null == o ? e : 'light' === o ? 'light' : 'dark';
+				window.document.documentElement.dataset.colorMode = t;
+			})();
+		</script>
 	</head>
 	<body>
 		<Header client:visible />
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
