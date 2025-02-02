@@ -10,7 +10,7 @@ export default function Hero() {
 				backgroundImage: `url(${background.src})`,
 			}}
 		>
-			<div className='min-h-screen w-full dark:bg-black/70 flex items-center justify-start px-10'>
+			<div className='min-h-screen w-full dark:bg-black/30 flex items-center justify-start px-10'>
 				<div className='max-w-[640px] flex flex-col gap-5 text-black dark:text-white mt-20'>
 					{/* <span className='text-base font-medium text-white'>New Release</span> */}
 					<h1 className='font-bold tracking-tight text-5xl md:text-6xl lg:text-7xl'>

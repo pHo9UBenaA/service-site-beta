@@ -1,10 +1,14 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
-import Hero from 'src/components/Hero.tsx';
-import About from 'src/components/About.tsx';
+import Hero from 'src/features/Hero.tsx';
+import About from 'src/features/About.tsx';
+import Courses from 'src/features/Courses';
 ---
 
 <Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya">
     <Hero />
-    <About />
+    <div class="bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]">
+        <About />
+        <Courses />
+    </div>
 </Layout>
