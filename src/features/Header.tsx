@@ -52,7 +52,7 @@ export default function Header() {
 							<Menu strokeWidth={3} />
 						</Button>
 					</SheetTrigger>
-					<SheetContent side='right'>
+					<SheetContent side='right' className='text-gray-700 dark:text-gray-300'>
 						<SheetHeader>
 							<SheetTitle>Menu</SheetTitle>
 							{/* <SheetDescription>Description</SheetDescription> */}

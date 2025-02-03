@@ -112,9 +112,8 @@ export default function About() {
 						alt='Aerial view of mountains'
 						width={600}
 						height={400}
-						className='rounded-lg object-cover w-full h-full'
+						className='rounded-lg object-cover w-full h-full dark:brightness-80'
 					/>
-					<div className='dark:bg-black/30  absolute rounded-lg top-0 left-0 w-full h-full z-10' />
 				</div>
 
 				{/* Center Column - Text Content */}
