@@ -11,17 +11,11 @@ export function QualificationCard({
 }) {
 	return (
 		<Card className='overflow-hidden'>
-			<CardHeader>
-				{headerSlot}
-			</CardHeader>
+			<CardHeader>{headerSlot}</CardHeader>
 
-			<CardContent>
-				{imageSlot}
-			</CardContent>
+			<CardContent>{imageSlot}</CardContent>
 
-			<CardContent>
-				{descriptionSlot}
-			</CardContent>
+			<CardContent>{descriptionSlot}</CardContent>
 		</Card>
 	);
 }

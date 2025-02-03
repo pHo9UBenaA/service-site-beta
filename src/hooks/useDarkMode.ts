@@ -5,11 +5,14 @@ export function useDarkMode() {
 
 	useLayoutEffect(() => {
 		const storedPreference = localStorage.getItem('darkMode');
-		const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const prefersDarkScheme = window.matchMedia(
+			'(prefers-color-scheme: dark)',
+		).matches;
 
-		const darkModePreference = storedPreference !== null
-			? storedPreference === 'dark'
-			: prefersDarkScheme;
+		const darkModePreference =
+			storedPreference !== null
+				? storedPreference === 'dark'
+				: prefersDarkScheme;
 
 		setIsDarkMode(darkModePreference);
 		document.documentElement.classList.toggle('dark', darkModePreference);
