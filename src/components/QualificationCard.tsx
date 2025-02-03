@@ -1,41 +1,26 @@
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from 'src/components/ui/card';
+import { Card, CardContent, CardHeader } from 'src/components/ui/card';
 
 export function QualificationCard({
-	title,
-	subTitle,
-	description,
-	imageSrc,
+	headerSlot,
+	imageSlot,
+	descriptionSlot,
 }: {
-	title: string;
-	subTitle: string;
-	description: string;
-	imageSrc: string;
+	headerSlot: React.ReactNode;
+	imageSlot: React.ReactNode;
+	descriptionSlot: React.ReactNode;
 }) {
 	return (
 		<Card className='overflow-hidden'>
 			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription>{subTitle}</CardDescription>
+				{headerSlot}
 			</CardHeader>
 
 			<CardContent>
-				<div className='flex justify-start'>
-					<img
-						src={imageSrc || '/placeholder.svg'}
-						alt={title}
-						className='w-full h-auto bg-black dark:brightness-80'
-					/>
-				</div>
+				{imageSlot}
 			</CardContent>
 
 			<CardContent>
-				<CardDescription>{description}</CardDescription>
+				{descriptionSlot}
 			</CardContent>
 		</Card>
 	);

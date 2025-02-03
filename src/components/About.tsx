@@ -10,7 +10,7 @@
 // 			<div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8'>
 // 				{/* Right Column - Aerial Image for Mobile */}
 // 				<div className='w-full h-full md:order-2 relative'>
-// 					<img
+// 					<img loading="lazy"
 // 						src='https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg'
 // 						alt='Aerial view of mountains'
 // 						width={600}
@@ -60,7 +60,7 @@
 // 			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
 // 				{/* Right Column - Aerial Image for Mobile */}
 // 				<div className='w-full h-full md:order-2 relative'>
-// 					<img
+// 					<img loading="lazy"
 // 						src='https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg'
 // 						alt='Aerial view of mountains'
 // 						width={600}
@@ -111,6 +111,7 @@ export default function About() {
 				{/* Right Column - Aerial Image for Mobile */}
 				<div className='w-full h-full md:order-2 relative'>
 					<img
+						loading='lazy'
 						src='https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg'
 						alt='Aerial view of mountains'
 						width={600}

@@ -25,7 +25,14 @@ export default function Header() {
 		<header className='fixed z-50 bg-white/10 dark:bg-gray-50/10 backdrop-blur-2xl rounded-md start-5 end-5 top-6'>
 			<div className='flex items-center justify-between p-3'>
 				<a href='/'>
-					<img src={astroLogo.src} className='px-2 h-10' alt="Astro's Logo" />
+					<img
+						loading='lazy'
+						src={astroLogo.src}
+						className='px-2 h-10 w-auto'
+						width={0}
+						height={0}
+						alt="Astro's Logo"
+					/>
 				</a>
 
 				{/* Toggle Dark Mode */}
@@ -52,7 +59,10 @@ export default function Header() {
 							<Menu strokeWidth={3} />
 						</Button>
 					</SheetTrigger>
-					<SheetContent side='right' className='text-gray-700 dark:text-gray-300'>
+					<SheetContent
+						side='right'
+						className='text-gray-700 dark:text-gray-300'
+					>
 						<SheetHeader>
 							<SheetTitle>Menu</SheetTitle>
 							{/* <SheetDescription>Description</SheetDescription> */}

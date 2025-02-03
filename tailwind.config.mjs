@@ -20,7 +20,7 @@ const config = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Noto Sans JP'],
+				sans: [...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
