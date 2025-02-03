@@ -1,6 +1,8 @@
 ---
 import 'src/styles/global.css';
 
+import Header from 'src/features/Header';
+
 const { lang, title, description, author } = Astro.props;
 ---
 
@@ -22,8 +24,21 @@ const { lang, title, description, author } = Astro.props;
 		<meta property="og:image" content={Astro.url + '/ogp.png'} />
 
 		<meta name="author" content={author} />
+
+		<script>
+			// TODO: まだチラつく。useDarkModeにも同様の記述があるのでDRYに
+			(function() {
+				const e = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				const o = localStorage.getItem('darkMode');
+				const t = 'system' === o || null == o ? e : 'light' === o ? 'light' : 'dark';
+				window.document.documentElement.dataset.colorMode = t;
+			})();
+		</script>
 	</head>
 	<body>
-		<slot />
+		<Header client:visible />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>

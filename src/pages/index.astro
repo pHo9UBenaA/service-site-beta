@@ -1,10 +1,18 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
-import ExampleButton from 'src/components/ExampleButton.astro';
+import Hero from 'src/features/Hero.tsx';
+import About from 'src/features/About.tsx';
+import Qualifications from 'src/features/Qualifications';
+import Courses from 'src/features/Courses';
+import Sponsors from 'src/features/Sponsors';
 ---
 
-<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya"></Layout>
-    <div class="flex justify-center items-center h-screen">
-        <ExampleButton />
+<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya">
+    <Hero />
+    <div class="flex flex-col gap-20 md:gap-25 py-15 md:py-20 bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]">
+        <About />
+        <Qualifications />
+        <Courses />
+        <Sponsors />
     </div>
 </Layout>
