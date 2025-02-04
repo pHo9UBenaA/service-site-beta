@@ -28,7 +28,7 @@ function QualificationImage({
 			alt={alt}
 			width={0}
 			height={0}
-			className={cn('w-full h-auto bg-black dark:brightness-80', className)}
+			className={cn('h-auto w-full bg-black dark:brightness-80', className)}
 		/>
 	);
 }
@@ -72,7 +72,7 @@ export default function Qualifications() {
 
 	return (
 		<Section title='COURSES'>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+			<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 				{courses.map((course, index) =>
 					courses.length - 1 !== index ? (
 						<QualificationCard
@@ -95,7 +95,7 @@ export default function Qualifications() {
 							<QualificationCard
 								headerSlot={<QualificationTitle title={course.title} />}
 								imageSlot={
-									<div className='flex flex-col md:flex-row gap-4'>
+									<div className='flex flex-col gap-4 md:flex-row'>
 										<QualificationImage
 											src={course.imageSrc}
 											alt={`${course.title} 1`}

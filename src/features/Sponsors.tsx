@@ -4,7 +4,7 @@ import { Section } from 'src/components/Section';
 export default function Sponsors() {
 	return (
 		<Section title='SPONSORS'>
-			<div className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 place-items-center gap-10 min-h-18 h-auto w-auto'>
+			<div className='grid h-auto min-h-18 w-auto grid-cols-3 place-items-center gap-10 md:grid-cols-5 lg:grid-cols-7'>
 				{Array.from({ length: 10 }).map((_, index) => (
 					<img
 						key={`sponsor-${index + 1}`}

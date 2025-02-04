@@ -104,31 +104,31 @@ import { Card } from 'src/components/ui/card';
 export default function About() {
 	return (
 		<Section title='ABOUT'>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
+			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12'>
 				{/* Right Column - Aerial Image for Mobile */}
-				<div className='w-full h-full md:order-2 relative'>
+				<div className='relative h-full w-full md:order-2'>
 					<img
 						loading='lazy'
 						src='https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg'
 						alt='Aerial view of mountains'
 						width={0}
 						height={0}
-						className='rounded-lg object-cover w-full h-full dark:brightness-80'
+						className='h-full w-full rounded-lg object-cover dark:brightness-80'
 					/>
 				</div>
 
 				{/* Center Column - Text Content */}
-				<div className='flex flex-col gap-5 md:gap-10 text-black dark:text-white'>
+				<div className='flex flex-col gap-5 text-black md:gap-10 dark:text-white'>
 					<div className='space-y-1 md:space-y-2'>
-						<h3 className='text-2xl md:text-3xl font-medium'>
+						<h3 className='font-medium text-2xl md:text-3xl'>
 							未来を担うパイロットへ。
 						</h3>
-						<h3 className='text-2xl md:text-3xl font-medium'>
+						<h3 className='font-medium text-2xl md:text-3xl'>
 							安全で革新的な、講習体験を。
 						</h3>
 					</div>
 
-					<Card className='bg-white/50 p-6 md:p-8 space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed'>
+					<Card className='space-y-4 bg-white/50 p-6 text-gray-700 leading-relaxed md:space-y-6 md:p-8 dark:text-gray-300'>
 						<p className='text-base md:text-lg'>
 							当サイトは、初心者からプロフェッショナルまで、すべてのドローン操縦者向けに実践的かつ安全な講習プログラムを提供しています。
 						</p>

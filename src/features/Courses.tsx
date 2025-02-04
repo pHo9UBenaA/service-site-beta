@@ -11,7 +11,7 @@ function CourseImage({ src, alt }: { src: string; alt: string }) {
 				alt={alt}
 				width={0}
 				height={0}
-				className='object-cover w-full h-full dark:brightness-80'
+				className='h-full w-full object-cover dark:brightness-80'
 			/>
 		</div>
 	);
@@ -81,7 +81,7 @@ export default function Courses() {
 
 	return (
 		<Section title='COURSES'>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+			<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 				{courses.map((course) => (
 					<CourseCard
 						imageSlot={<CourseImage src={course.imageSrc} alt={course.title} />}

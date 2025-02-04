@@ -22,13 +22,13 @@ export default function Header() {
 	const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 	return (
-		<header className='fixed z-50 bg-white/10 dark:bg-gray-50/10 backdrop-blur-2xl rounded-md start-5 end-5 top-6'>
+		<header className='fixed start-5 end-5 top-6 z-50 rounded-md bg-white/10 backdrop-blur-2xl dark:bg-gray-50/10'>
 			<div className='flex items-center justify-between p-3'>
 				<a href='/'>
 					<img
 						loading='lazy'
 						src={astroLogo.src}
-						className='px-2 h-10 w-auto'
+						className='h-10 w-auto px-2'
 						width={0}
 						height={0}
 						alt="Astro's Logo"
@@ -67,7 +67,7 @@ export default function Header() {
 							<SheetTitle>Menu</SheetTitle>
 							{/* <SheetDescription>Description</SheetDescription> */}
 						</SheetHeader>
-						<div className='flex flex-col gap-3 mt-5'>
+						<div className='mt-5 flex flex-col gap-3'>
 							<Button variant='ghost'>Home</Button>
 							<Button variant='ghost'>About</Button>
 							<Button variant='ghost'>Services</Button>

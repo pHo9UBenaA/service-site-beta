@@ -102,37 +102,37 @@ import { Card } from 'src/components/ui/card';
 
 export default function About() {
 	return (
-		<section className='flex flex-col gap-10 md:gap-15 px-10 md:px-15 py-15 md:py-20 bg-linear-to-t from-[#fde1ee] to-white dark:from-[#4b4447] dark:to-[#4c4c4c]'>
-			<h2 className='text-center text-gray-600 dark:text-gray-300 tracking-wide'>
+		<section className='flex flex-col gap-10 bg-linear-to-t from-[#fde1ee] to-white px-10 py-15 md:gap-15 md:px-15 md:py-20 dark:from-[#4b4447] dark:to-[#4c4c4c]'>
+			<h2 className='text-center text-gray-600 tracking-wide dark:text-gray-300'>
 				( ABOUT )
 			</h2>
 
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
+			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12'>
 				{/* Right Column - Aerial Image for Mobile */}
-				<div className='w-full h-full md:order-2 relative'>
+				<div className='relative h-full w-full md:order-2'>
 					<img
 						loading='lazy'
 						src='https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg'
 						alt='Aerial view of mountains'
 						width={600}
 						height={400}
-						className='rounded-lg object-cover w-full h-full'
+						className='h-full w-full rounded-lg object-cover'
 					/>
-					<div className='dark:bg-black/30  absolute rounded-lg top-0 left-0 w-full h-full z-10' />
+					<div className='absolute top-0 left-0 z-10 h-full w-full rounded-lg dark:bg-black/30' />
 				</div>
 
 				{/* Center Column - Text Content */}
-				<div className='flex flex-col gap-5 md:gap-10 text-black dark:text-white'>
+				<div className='flex flex-col gap-5 text-black md:gap-10 dark:text-white'>
 					<div className='space-y-1 md:space-y-2'>
-						<h3 className='text-2xl md:text-3xl font-medium'>
+						<h3 className='font-medium text-2xl md:text-3xl'>
 							未来を担うパイロットへ。
 						</h3>
-						<h3 className='text-2xl md:text-3xl font-medium'>
+						<h3 className='font-medium text-2xl md:text-3xl'>
 							安全で革新的な、講習体験を。
 						</h3>
 					</div>
 
-					<Card className='bg-white/50 p-6 md:p-8 space-y-4 md:space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed'>
+					<Card className='space-y-4 bg-white/50 p-6 text-gray-700 leading-relaxed md:space-y-6 md:p-8 dark:text-gray-300'>
 						<p className='text-base md:text-lg'>
 							当サイトは、初心者からプロフェッショナルまで、すべてのドローン操縦者向けに実践的かつ安全な講習プログラムを提供しています。
 						</p>
