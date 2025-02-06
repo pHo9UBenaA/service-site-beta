@@ -2,7 +2,7 @@
 import 'src/styles/global.css';
 
 import Header from 'src/features/Header';
-
+import Footer from 'src/features/Footer';
 const { lang, title, description, author } = Astro.props;
 ---
 
@@ -40,5 +40,6 @@ const { lang, title, description, author } = Astro.props;
 		<main>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
