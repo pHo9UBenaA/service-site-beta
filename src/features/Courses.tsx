@@ -1,17 +1,18 @@
 import { CourseCard } from 'src/components/CourseCard';
+import ImageBase from 'src/components/ImageBase';
 import { Section } from 'src/components/Section';
 import { CardDescription, CardTitle } from 'src/components/ui/card';
+
+import { cn } from 'src/lib/utils';
+import { Gap } from 'src/styles/constant';
 
 function CourseImage({ src, alt }: { src: string; alt: string }) {
 	return (
 		<div className='h-64'>
-			<img
-				loading='lazy'
+			<ImageBase
 				src={src || '/placeholder.svg'}
 				alt={alt}
-				width={0}
-				height={0}
-				className='object-cover w-full h-full dark:brightness-80'
+				className='object-cover'
 			/>
 		</div>
 	);
@@ -81,7 +82,7 @@ export default function Courses() {
 
 	return (
 		<Section title='COURSES'>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+			<div className={cn(Gap['7_5-12_5'], 'grid grid-cols-1 md:grid-cols-2')}>
 				{courses.map((course) => (
 					<CourseCard
 						imageSlot={<CourseImage src={course.imageSrc} alt={course.title} />}

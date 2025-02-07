@@ -1,3 +1,6 @@
+import { cn } from 'src/lib/utils';
+import { Gap, Padding, TextNeutral } from 'src/styles/constant';
+
 export function Section({
 	title,
 	children,
@@ -6,11 +9,12 @@ export function Section({
 	children: React.ReactNode;
 }) {
 	return (
-		// <section className='flex flex-col gap-10 md:gap-15 px-10 md:px-15 py-15 md:py-20'>
-		<section className='flex flex-col gap-10 md:gap-15 px-10 md:px-15'>
-			<h2 className='text-center text-gray-600 dark:text-gray-300 tracking-wide'>
-				{`( ${title} )`}
-			</h2>
+		<section
+			className={cn(Gap['7_5-12_5'], Padding.x['7-13-20'], 'grid grid-cols-1')}
+		>
+			<h2
+				className={cn(TextNeutral[700], 'tracking-wide')}
+			>{`( ${title} )`}</h2>
 			{children}
 		</section>
 	);

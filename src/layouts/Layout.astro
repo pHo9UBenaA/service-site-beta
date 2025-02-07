@@ -2,8 +2,8 @@
 import 'src/styles/global.css';
 
 import Header from 'src/features/Header';
-
-const { lang, title, description, author } = Astro.props;
+import Footer from 'src/features/Footer';
+const { lang, title, description, author, mainClassName } = Astro.props;
 ---
 
 <!doctype html>
@@ -37,8 +37,9 @@ const { lang, title, description, author } = Astro.props;
 	</head>
 	<body>
 		<Header client:visible />
-		<main>
+		<main class={mainClassName}>
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

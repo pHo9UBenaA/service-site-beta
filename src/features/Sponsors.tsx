@@ -1,19 +1,27 @@
 import astroLogo from 'src/assets/astro.svg';
+import ImageBase from 'src/components/ImageBase';
 import { Section } from 'src/components/Section';
 
+import { cn } from 'src/lib/utils';
+import { Gap } from 'src/styles/constant';
+
 export default function Sponsors() {
+	const sponsorCount = 10;
+
 	return (
 		<Section title='SPONSORS'>
-			<div className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 place-items-center gap-10 min-h-18 h-auto w-auto'>
-				{Array.from({ length: 10 }).map((_, index) => (
-					<img
+			<div
+				className={cn(
+					Gap['7_5-12_5'],
+					'grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] place-items-center',
+				)}
+			>
+				{Array.from({ length: sponsorCount }).map((_, index) => (
+					<ImageBase
 						key={`sponsor-${index + 1}`}
-						loading='lazy'
 						src={astroLogo.src}
 						alt={`sponsor-${index + 1}`}
-						className='h-full w-auto dark:brightness-80'
-						width={0}
-						height={0}
+						className='max-h-16 object-contain'
 					/>
 				))}
 			</div>
