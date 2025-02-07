@@ -5,11 +5,23 @@ import About from 'src/features/About.tsx';
 import Qualifications from 'src/features/Qualifications';
 import Courses from 'src/features/Courses';
 import Sponsors from 'src/features/Sponsors';
+
+import { cn } from 'src/lib/utils';
+
+const defaultText = 'text-md text-black dark:text-white leading-relaxed';
+
+const defaultStyle = cn(defaultText);
+
+const mainContentStructure = 'grid grid-cols-1 gap-20 md:gap-25 py-15 md:py-20';
+const mainContentBackground =
+	'bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]';
+
+const mergedStyle = cn(mainContentStructure, mainContentBackground);
 ---
 
-<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya">
+<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya" mainClassName={defaultStyle}>
     <Hero />
-    <div class="flex flex-col gap-20 md:gap-25 py-15 md:py-20 bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]">
+    <div class={mergedStyle}>
         <About />
         <Qualifications />
         <Courses />

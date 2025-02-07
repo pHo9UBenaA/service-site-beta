@@ -1,17 +1,15 @@
 import { CourseCard } from 'src/components/CourseCard';
+import ImageBase from 'src/components/ImageBase';
 import { Section } from 'src/components/Section';
 import { CardDescription, CardTitle } from 'src/components/ui/card';
 
 function CourseImage({ src, alt }: { src: string; alt: string }) {
 	return (
 		<div className='h-64'>
-			<img
-				loading='lazy'
+			<ImageBase
 				src={src || '/placeholder.svg'}
 				alt={alt}
-				width={0}
-				height={0}
-				className='h-full w-full object-cover dark:brightness-80'
+				className='object-cover'
 			/>
 		</div>
 	);
