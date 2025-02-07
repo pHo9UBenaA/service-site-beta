@@ -3,7 +3,7 @@ import { Section } from 'src/components/Section';
 import { Card } from 'src/components/ui/card';
 
 import { cn } from 'src/lib/utils';
-import { TextGray } from 'src/styles/constant';
+import { TextNeutral } from 'src/styles/constant';
 
 export default function About() {
 	return (
@@ -21,16 +21,19 @@ export default function About() {
 				{/* Left Column - Text Content */}
 				<div className='grid gap-5 md:gap-10'>
 					<div className='space-y-1 md:space-y-2'>
-						<h3 className='font-medium text-xl md:text-2xl'>
+						<h3 className='font-medium text-lg md:text-2xl'>
 							未来を担うパイロットへ。
 						</h3>
-						<h3 className='font-medium text-xl md:text-2xl'>
+						<h3 className='font-medium text-lg md:text-2xl'>
 							安全で革新的な、講習体験を。
 						</h3>
 					</div>
 
 					<Card
-						className={cn(TextGray[700], 'space-y-4 p-6 md:space-y-6 md:p-8')}
+						className={cn(
+							TextNeutral[700],
+							'space-y-4 p-6 md:space-y-6 md:p-8',
+						)}
 					>
 						<p>
 							当サイトは、初心者からプロフェッショナルまで、すべてのドローン操縦者向けに実践的かつ安全な講習プログラムを提供しています。

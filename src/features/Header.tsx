@@ -17,7 +17,7 @@ import {
 	SheetTrigger,
 } from 'src/components/ui/sheet';
 import { useDarkMode } from 'src/hooks/useDarkMode';
-import { TextGray } from 'src/styles/constant';
+import { TextNeutral } from 'src/styles/constant';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +58,7 @@ export default function Header() {
 								<Menu strokeWidth={3} />
 							</Button>
 						</SheetTrigger>
-						<SheetContent side='right' className={TextGray[700]}>
+						<SheetContent side='right' className={TextNeutral[700]}>
 							<SheetHeader>
 								<SheetTitle>Menu</SheetTitle>
 							</SheetHeader>

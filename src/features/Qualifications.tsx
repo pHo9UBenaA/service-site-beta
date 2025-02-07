@@ -33,7 +33,7 @@ export default function Qualifications() {
                 ※国家資格によりレベル3飛行までの国土交通省への申請が不要となります（機体認証されている機体に限る）
             `,
 			imageSrc:
-				'https://ds-chiba-tbt.jp/wp-content/uploads/%E7%84%A1%E4%BA%BA%E8%88%AA%E7%A9%BA%E6%A9%9F%E6%93%8D%E7%B8%A6%E8%80%85%E6%8A%80%E8%83%BD%E8%A8%BC%E6%98%8E%E6%9B%B8.png',
+				'https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg',
 		},
 		{
 			title: '二等資格（国家資格）',
@@ -43,7 +43,7 @@ export default function Qualifications() {
                 ※国家資格によりレベル3飛行までの国土交通省への申請が不要となります（機体認証されている機体に限る）
             `,
 			imageSrc:
-				'https://ds-chiba-tbt.jp/wp-content/uploads/%E7%84%A1%E4%BA%BA%E8%88%AA%E7%A9%BA%E6%A9%9F%E6%93%8D%E7%B8%A6%E8%80%85%E6%8A%80%E8%83%BD%E8%A8%BC%E6%98%8E%E6%9B%B8.png',
+				'https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg',
 		},
 	];
 
@@ -55,13 +55,13 @@ export default function Qualifications() {
 			空港周辺・高度151ｍ以上・イベント上空・危険物輸送・物件投下・一定の重量以上は許可、承認が必要ですが、審査が一部省略されます。
 		`,
 			imageSrc:
-				'https://ds-chiba-tbt.jp/wp-content/uploads/%E7%84%A1%E4%BA%BA%E8%88%AA%E7%A9%BA%E6%A9%9F%E6%93%8D%E7%B8%A6%E8%80%85%E6%8A%80%E8%83%BD%E8%A8%BC%E6%98%8E%E6%9B%B8.png',
+				'https://64.media.tumblr.com/e746384d214dcc8240d5e898ce871db8/tumblr_ng37kbjFNO1qfirfao1_1280.jpg',
 		},
 	];
 
 	return (
 		<Section title='QUALIFICATIONS'>
-			<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+			<div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
 				{singleColumnQualifications.map((qualification) => (
 					<QualificationCard
 						headerSlot={
@@ -89,7 +89,7 @@ export default function Qualifications() {
 						<QualificationCard
 							headerSlot={<QualificationTitle title={qualification.title} />}
 							imageSlot={
-								<div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+								<div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
 									<QualificationImage
 										src={qualification.imageSrc}
 										alt={`${qualification.title} 1`}
