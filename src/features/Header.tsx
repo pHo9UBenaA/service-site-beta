@@ -27,7 +27,12 @@ export default function Header() {
 
 	return (
 		<header className='fixed start-5 end-5 top-6 z-50 rounded-md bg-white/10 backdrop-blur-2xl dark:bg-gray-50/10'>
-			<div className={cn(Padding.all['2_5-5-7_5'], 'grid grid-cols-2 items-center')}>
+			<div
+				className={cn(
+					Padding.all['2_5-5-7_5'],
+					'grid grid-cols-2 items-center',
+				)}
+			>
 				<a href='/'>
 					<ImageBase
 						src={astroLogo.src}
