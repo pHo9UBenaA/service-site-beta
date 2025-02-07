@@ -3,6 +3,9 @@ import { QualificationCard } from 'src/components/QualificationCard';
 import { Section } from 'src/components/Section';
 import { CardDescription, CardTitle } from 'src/components/ui/card';
 
+import { cn } from 'src/lib/utils';
+import { Gap } from 'src/styles/constant';
+
 function QualificationTitle({
 	title,
 	subTitle,
@@ -61,7 +64,7 @@ export default function Qualifications() {
 
 	return (
 		<Section title='QUALIFICATIONS'>
-			<div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
+			<div className={cn(Gap['7_5-12_5'], 'grid grid-cols-1 md:grid-cols-2')}>
 				{singleColumnQualifications.map((qualification) => (
 					<QualificationCard
 						headerSlot={
@@ -89,7 +92,12 @@ export default function Qualifications() {
 						<QualificationCard
 							headerSlot={<QualificationTitle title={qualification.title} />}
 							imageSlot={
-								<div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
+								<div
+									className={cn(
+										Gap['7_5-12_5'],
+										'grid grid-cols-1 md:grid-cols-2',
+									)}
+								>
 									<QualificationImage
 										src={qualification.imageSrc}
 										alt={`${qualification.title} 1`}

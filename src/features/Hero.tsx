@@ -3,7 +3,7 @@ import background from 'src/assets/background.svg';
 import { Button } from 'src/components/ui/button';
 
 import { cn } from 'src/lib/utils';
-import { TextNeutral } from 'src/styles/constant';
+import { Gap, Margin, Padding, TextNeutral } from 'src/styles/constant';
 
 export default function Hero() {
 	return (
@@ -13,8 +13,19 @@ export default function Hero() {
 				backgroundImage: `url(${background.src})`,
 			}}
 		>
-			<div className='grid min-h-screen w-full items-center px-6 md:px-10 dark:bg-neutral-950/30'>
-				<div className='mt-20 grid max-w-[640px] gap-5 justify-self-start'>
+			<div
+				className={cn(
+					Padding.x['7-13-20'],
+					'grid min-h-screen w-full items-center dark:bg-neutral-950/30',
+				)}
+			>
+				<div
+					className={cn(
+						Gap['3-5'],
+						Margin.t['7-13-20'],
+						'grid max-w-[640px] justify-self-start',
+					)}
+				>
 					<h1 className='font-bold text-4xl md:text-6xl'>
 						最先端ドローン講習へ、ようこそ
 					</h1>

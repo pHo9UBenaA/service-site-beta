@@ -13,12 +13,11 @@ const defaultText = 'text-base leading-relaxed md:text-md';
 
 const defaultStyle = cn(TextNeutral[950], defaultText);
 
-// const mainContentStructure = "grid grid-cols-1 gap-15 md:gap-25 py-10 md:py-20";
 const mainContentStructure ="grid grid-cols-1";
 const mainContentBackground =
 	'bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]';
 
-const mergedStyle = cn(Gap.mainContent, Padding.mainContent, mainContentStructure, mainContentBackground);
+const mergedStyle = cn(Gap['15-25'], Padding.y['10-20-30'], mainContentStructure, mainContentBackground);
 ---
 
 <Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya" mainClassName={defaultStyle}>

@@ -4,6 +4,9 @@ import ImageBase from 'src/components/ImageBase';
 import { cn } from 'src/lib/utils';
 import {
 	BorderNeutral,
+	Gap,
+	Margin,
+	Padding,
 	TextNeutral,
 	TextNeutralWithHover,
 } from 'src/styles/constant';
@@ -45,15 +48,21 @@ const navigations = {
 
 export default function Footer() {
 	return (
-		<footer className='w-full bg-white px-10 pt-12 pb-10 md:px-20 md:pt-17 dark:bg-neutral-950/30'>
-			<div className='grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)_minmax(0,1.5fr)] md:gap-0'>
+		<footer
+			className={cn(
+				Padding.all['7-13-20'],
+				'w-full bg-white pb-4 md:pb-7 lg:pb-10 dark:bg-neutral-950/30',
+			)}
+		>
+			{/* Top Section */}
+			<div className='grid grid-cols-1 gap-7.5 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)_minmax(0,1.5fr)] md:gap-0'>
 				{/* Logo Section */}
 				<div>
 					<a href='/'>
 						<ImageBase
 							src={astroLogo.src}
 							alt="Astro's Logo"
-							className='h-30 w-auto'
+							className='h-15 w-auto'
 						/>
 					</a>
 				</div>
@@ -76,15 +85,36 @@ export default function Footer() {
 					<table>
 						<tbody className='text-left'>
 							<tr>
-								<th className='pr-2 font-bold tracking-wide'>TEL</th>
+								<th
+									className={cn(
+										Padding.r['2_5-5-7_5'],
+										'font-bold tracking-wide',
+									)}
+								>
+									TEL
+								</th>
 								<td>012-3456-7890</td>
 							</tr>
 							<tr>
-								<th className='pr-2 font-bold tracking-wide'>FAX</th>
+								<th
+									className={cn(
+										Padding.r['2_5-5-7_5'],
+										'font-bold tracking-wide',
+									)}
+								>
+									FAX
+								</th>
 								<td>012-3456-7891</td>
 							</tr>
 							<tr>
-								<th className='pr-2 font-bold tracking-wide'>MAIL</th>
+								<th
+									className={cn(
+										Padding.r['2_5-5-7_5'],
+										'font-bold tracking-wide',
+									)}
+								>
+									MAIL
+								</th>
 								<td>dummy@example.com</td>
 							</tr>
 						</tbody>
@@ -93,7 +123,7 @@ export default function Footer() {
 
 				{/* Navigation Section */}
 				<div className='order-2 md:order-3'>
-					<nav className='grid grid-cols-2 gap-2'>
+					<nav className={cn(Gap['1_5-2_5'], 'grid grid-cols-2')}>
 						<div className='space-y-2'>
 							{navigations.main.map((item) => (
 								<a
@@ -120,18 +150,28 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<hr className={cn(BorderNeutral[200], 'my-10 md:my-13')} />
+			<hr className={cn(BorderNeutral[200], Margin.y['7-13'])} />
 
 			{/* Bottom Section */}
 			<div>
-				<div className='grid grid-cols-2 items-center gap-2 text-sm md:text-base'>
+				<div
+					className={cn(
+						Gap['1_5-2_5'],
+						'grid grid-cols-2 items-center text-xs md:text-base',
+					)}
+				>
 					<div className='grid justify-self-start'>
 						<a href='/privacy-policy' className={TextNeutralWithHover[800]}>
 							PRIVACY POLICY
 						</a>
 					</div>
 
-					<div className='grid grid-flow-col gap-2 justify-self-end'>
+					<div
+						className={cn(
+							Gap['1_5-2_5'],
+							'grid grid-flow-col justify-self-end',
+						)}
+					>
 						<a
 							href='https://instagram.com'
 							className={TextNeutralWithHover[800]}
