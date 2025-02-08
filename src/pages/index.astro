@@ -4,33 +4,27 @@ import Hero from 'src/features/Hero.tsx';
 import About from 'src/features/About.tsx';
 import Qualifications from 'src/features/Qualifications';
 import Courses from 'src/features/Courses';
+import News from 'src/features/News';
 import Sponsors from 'src/features/Sponsors';
 
 import { cn } from 'src/lib/utils';
-import { TextNeutral, Gap, Padding } from 'src/styles/constant';
+import { Gap, Padding } from 'src/styles/constant';
 
-const defaultText = 'text-base leading-relaxed md:text-md';
-
-const defaultStyle = cn(TextNeutral[950], defaultText);
-
-const mainContentStructure = 'grid grid-cols-1';
-const mainContentBackground =
-	'bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]';
-
-const mergedStyle = cn(
+const mainContentClasses = cn(
 	Gap['15-25'],
 	Padding.y['10-20-30'],
-	mainContentStructure,
-	mainContentBackground,
+	'grid grid-cols-1',
+	'bg-linear-to-b from-white to-[#FCE2F0] dark:from-[#B2B2B2] dark:to-[#B09DAA]',
 );
 ---
 
-<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya" mainClassName={defaultStyle}>
+<Layout lang="en" title="Astro Basics" description="Astro Basics" author="Komiya">
     <Hero />
-    <div class={mergedStyle}>
-        <About />
-        <Qualifications />
-        <Courses />
-        <Sponsors />
+    <div class={mainContentClasses}>
+        <About client:visible />
+        <News client:visible />
+        <Qualifications client:visible />
+        <Courses client:visible />
+        <Sponsors client:visible />
     </div>
 </Layout>

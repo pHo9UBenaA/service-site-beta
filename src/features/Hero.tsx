@@ -3,7 +3,13 @@ import background from 'src/assets/background.svg';
 import { Button } from 'src/components/ui/button';
 
 import { cn } from 'src/lib/utils';
-import { Gap, Margin, Padding, TextNeutral } from 'src/styles/constant';
+import {
+	Animation,
+	Gap,
+	Margin,
+	Padding,
+	TextNeutral,
+} from 'src/styles/constant';
 
 export default function Hero() {
 	return (
@@ -16,6 +22,7 @@ export default function Hero() {
 			<div
 				className={cn(
 					Padding.x['7-13-20'],
+					Animation.slideInFromRight_800,
 					'grid min-h-screen w-full items-center dark:bg-neutral-950/30',
 				)}
 			>
