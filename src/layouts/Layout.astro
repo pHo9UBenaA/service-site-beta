@@ -3,7 +3,13 @@ import 'src/styles/global.css';
 
 import Header from 'src/features/Header';
 import Footer from 'src/features/Footer';
-const { lang, title, description, author, mainClassName } = Astro.props;
+
+import { cn } from 'src/lib/utils';
+import { TextNeutral } from 'src/styles/constant';
+
+const baseTextClasses = cn(TextNeutral[950], 'text-base leading-relaxed md:text-md')
+
+const { lang, title, description, author } = Astro.props;
 ---
 
 <!doctype html>
@@ -35,9 +41,9 @@ const { lang, title, description, author, mainClassName } = Astro.props;
 			})();
 		</script>
 	</head>
-	<body>
+	<body class={baseTextClasses}>
 		<Header client:visible />
-		<main class={mainClassName}>
+		<main>
 			<slot />
 		</main>
 		<Footer />
