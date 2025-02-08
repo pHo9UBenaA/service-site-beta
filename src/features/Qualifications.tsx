@@ -1,7 +1,13 @@
+import type { PropsWithChildren } from 'react';
 import ImageBase from 'src/components/ImageBase';
-import { QualificationCard } from 'src/components/QualificationCard';
 import { Section } from 'src/components/Section';
-import { CardDescription, CardTitle } from 'src/components/ui/card';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from 'src/components/ui/card';
 
 import { cn } from 'src/lib/utils';
 import { Gap } from 'src/styles/constant';
@@ -18,12 +24,8 @@ function QualificationTitle({
 	);
 }
 
-function QualificationImage({ src, alt }: { src: string; alt: string }) {
-	return <ImageBase src={src || '/placeholder.svg'} alt={alt} />;
-}
-
-function QualificationDescription({ description }: { description: string }) {
-	return <CardDescription>{description}</CardDescription>;
+function QualificationCard({ children }: PropsWithChildren) {
+	return <Card className='overflow-hidden'>{children}</Card>;
 }
 
 export default function Qualifications() {
@@ -66,54 +68,51 @@ export default function Qualifications() {
 		<Section title='QUALIFICATIONS'>
 			<div className={cn(Gap['7_5-12_5'], 'grid grid-cols-1 md:grid-cols-2')}>
 				{singleColumnQualifications.map((qualification) => (
-					<QualificationCard
-						headerSlot={
+					<QualificationCard key={qualification.title}>
+						<CardHeader>
 							<QualificationTitle
 								title={qualification.title}
 								subTitle={qualification.subTitle}
 							/>
-						}
-						imageSlot={
-							<QualificationImage
+						</CardHeader>
+						<CardContent>
+							<ImageBase
 								src={qualification.imageSrc}
 								alt={qualification.title}
 							/>
-						}
-						descriptionSlot={
-							<QualificationDescription
-								description={qualification.description}
-							/>
-						}
-						key={qualification.title}
-					/>
+						</CardContent>
+						<CardContent>
+							<CardDescription>{qualification.description}</CardDescription>
+						</CardContent>
+					</QualificationCard>
 				))}
 				{doubleColumnQualifications.map((qualification) => (
 					<div className='md:col-span-2' key={qualification.title}>
-						<QualificationCard
-							headerSlot={<QualificationTitle title={qualification.title} />}
-							imageSlot={
+						<QualificationCard>
+							<CardHeader>
+								<QualificationTitle title={qualification.title} />
+							</CardHeader>
+							<CardContent>
 								<div
 									className={cn(
 										Gap['7_5-12_5'],
 										'grid grid-cols-1 md:grid-cols-2',
 									)}
 								>
-									<QualificationImage
+									<ImageBase
 										src={qualification.imageSrc}
 										alt={`${qualification.title} 1`}
 									/>
-									<QualificationImage
+									<ImageBase
 										src={qualification.imageSrc}
 										alt={`${qualification.title} 2`}
 									/>
 								</div>
-							}
-							descriptionSlot={
-								<QualificationDescription
-									description={qualification.description}
-								/>
-							}
-						/>
+							</CardContent>
+							<CardContent>
+								<CardDescription>{qualification.description}</CardDescription>
+							</CardContent>
+						</QualificationCard>
 					</div>
 				))}
 			</div>

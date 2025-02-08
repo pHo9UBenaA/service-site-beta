@@ -10,7 +10,7 @@ export default function ImageBase({ src, alt, className }: Props) {
 	return (
 		<img
 			loading='lazy'
-			src={src}
+			src={src || '/placeholder.svg'}
 			alt={alt}
 			width={0}
 			height={0}

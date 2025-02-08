@@ -1,7 +1,12 @@
-import { CourseCard } from 'src/components/CourseCard';
 import ImageBase from 'src/components/ImageBase';
 import { Section } from 'src/components/Section';
-import { CardDescription, CardTitle } from 'src/components/ui/card';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from 'src/components/ui/card';
 
 import { cn } from 'src/lib/utils';
 import { Gap } from 'src/styles/constant';
@@ -9,17 +14,9 @@ import { Gap } from 'src/styles/constant';
 function CourseImage({ src, alt }: { src: string; alt: string }) {
 	return (
 		<div className='h-64'>
-			<ImageBase
-				src={src || '/placeholder.svg'}
-				alt={alt}
-				className='object-cover'
-			/>
+			<ImageBase src={src} alt={alt} className='object-cover' />
 		</div>
 	);
-}
-
-function CourseTitle({ title }: { title: string }) {
-	return <CardTitle>{title}</CardTitle>;
 }
 
 function CourseTable({ period, price }: { period: string; price: string }) {
@@ -37,10 +34,6 @@ function CourseTable({ period, price }: { period: string; price: string }) {
 			</tbody>
 		</table>
 	);
-}
-
-function CourseDescription({ description }: { description: string }) {
-	return <CardDescription>{description}</CardDescription>;
 }
 
 export default function Courses() {
@@ -84,17 +77,18 @@ export default function Courses() {
 		<Section title='COURSES'>
 			<div className={cn(Gap['7_5-12_5'], 'grid grid-cols-1 md:grid-cols-2')}>
 				{courses.map((course) => (
-					<CourseCard
-						imageSlot={<CourseImage src={course.imageSrc} alt={course.title} />}
-						titleSlot={<CourseTitle title={course.title} />}
-						tableSlot={
+					<Card className='overflow-hidden' key={course.title}>
+						<CourseImage src={course.imageSrc} alt={course.title} />
+						<CardHeader>
+							<CardTitle>{course.title}</CardTitle>
+						</CardHeader>
+						<CardContent>
 							<CourseTable period={course.period} price={course.price} />
-						}
-						descriptionSlot={
-							<CourseDescription description={course.description} />
-						}
-						key={course.title}
-					/>
+						</CardContent>
+						<CardContent>
+							<CardDescription>{course.description}</CardDescription>
+						</CardContent>
+					</Card>
 				))}
 			</div>
 		</Section>
