@@ -1,6 +1,11 @@
 import ImageBase from 'src/components/ImageBase';
 import { Section } from 'src/components/Section';
-import { Card, CardContent, CardDescription, CardHeader } from 'src/components/ui/card';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+} from 'src/components/ui/card';
 
 import { cn } from 'src/lib/utils';
 import { Gap } from 'src/styles/constant';
@@ -44,7 +49,7 @@ export default function News() {
 				{courses.map((course) => (
 					<Card className='overflow-hidden' key={course.key}>
 						{/* <NewsImage src={course.imageSrc} alt={course.key} /> */}
-							<CardHeader>
+						<CardHeader>
 							<ImageBase
 								src={course.imageSrc}
 								alt={course.key}

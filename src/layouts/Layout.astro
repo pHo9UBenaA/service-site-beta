@@ -7,7 +7,10 @@ import Footer from 'src/features/Footer';
 import { cn } from 'src/lib/utils';
 import { TextNeutral } from 'src/styles/constant';
 
-const baseTextClasses = cn(TextNeutral[950], 'text-base leading-relaxed md:text-md')
+const baseTextClasses = cn(
+	TextNeutral[950],
+	'text-base leading-relaxed md:text-md',
+);
 
 const { lang, title, description, author } = Astro.props;
 ---
