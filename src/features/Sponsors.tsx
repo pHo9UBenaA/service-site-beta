@@ -12,8 +12,8 @@ export default function Sponsors() {
 		<Section title='SPONSORS'>
 			<div
 				className={cn(
-					Gap['7_5-12_5'],
-					'grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] place-items-center',
+					Gap['6-10'],
+					'grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] place-items-center',
 				)}
 			>
 				{Array.from({ length: sponsorCount }).map((_, index) => (
@@ -21,7 +21,7 @@ export default function Sponsors() {
 						key={`sponsor-${index + 1}`}
 						src={astroLogo.src}
 						alt={`sponsor-${index + 1}`}
-						className='max-h-16 object-contain'
+						className='max-h-20 object-contain'
 					/>
 				))}
 			</div>
