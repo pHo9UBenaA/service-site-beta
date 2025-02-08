@@ -64,6 +64,40 @@ const Margin = {
 	},
 } as const;
 
+type OneToNine = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type ZeroToNineOrUndefined = 0 | OneToNine;
+type AnimationDuration =
+	| `${OneToNine}`
+	| `${OneToNine}${ZeroToNineOrUndefined}`
+	| `${OneToNine}${ZeroToNineOrUndefined}${ZeroToNineOrUndefined}`
+	| `${OneToNine}${ZeroToNineOrUndefined}${ZeroToNineOrUndefined}${ZeroToNineOrUndefined}`;
+
+type ValidAnimationString<D extends AnimationDuration> =
+	| `${string}animate-${string}fade-in-${number}${string}duration-${D}${string}`
+	| `${string}animate-${string}duration-${D}${string}fade-in-${number}${string}`;
+
+const Animation = {
+	fadeIn_1600: 'animate-in fade-in-0 duration-1600',
+	// `fade-in-0`を試しにHeroのセクションに適用してみたら測定不能で、divに適用したらスコアが100から96に下がった（ヘッダーはfade-in-0でも可）
+	// `fade-in-5`にしたら改善
+	// 以下と同様の事象っぽい
+	// see: https://github.com/GoogleChrome/lighthouse/issues/10869#issuecomment-1194357955
+	slideInFromLeft_800:
+		'animate-in fade-in-5 slide-in-from-left-1/4 duration-800',
+	slideInFromRight_800:
+		'animate-in fade-in-5 slide-in-from-right-1/4 duration-800',
+	mdSlideInFromTop_800:
+		'md:animate-in md:fade-in-5 md:slide-in-from-top-1/4 md:duration-800',
+	mdSlideInFromBottom_800:
+		'md:animate-in md:fade-in-5 md:slide-in-from-bottom-1/4 md:duration-800',
+} as const satisfies {
+	[K in `${string}_${AnimationDuration}`]: K extends `${infer _Prefix}_${infer Num}`
+		? Num extends AnimationDuration
+			? ValidAnimationString<Num>
+			: never
+		: never;
+};
+
 export {
 	TextNeutral,
 	TextNeutralWithHover,
@@ -71,4 +105,5 @@ export {
 	Gap,
 	Padding,
 	Margin,
+	Animation,
 };

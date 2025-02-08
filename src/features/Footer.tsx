@@ -3,6 +3,7 @@ import ImageBase from 'src/components/ImageBase';
 
 import { cn } from 'src/lib/utils';
 import {
+	Animation,
 	BorderNeutral,
 	Gap,
 	Margin,
@@ -50,6 +51,7 @@ export default function Footer() {
 	return (
 		<footer
 			className={cn(
+				Animation.fadeIn_1600,
 				Padding.all['7-13-20'],
 				'w-full bg-white pb-4 md:pb-7 lg:pb-10 dark:bg-neutral-950/30',
 			)}

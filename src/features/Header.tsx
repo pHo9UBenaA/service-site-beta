@@ -19,14 +19,26 @@ import {
 import { useDarkMode } from 'src/hooks/useDarkMode';
 
 import { cn } from 'src/lib/utils';
-import { Gap, Margin, Padding, TextNeutral } from 'src/styles/constant';
+import {
+	Animation,
+	Gap,
+	Margin,
+	Padding,
+	TextNeutral,
+} from 'src/styles/constant';
 
 export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isDarkMode, toggleDarkMode } = useDarkMode();
 
 	return (
-		<header className='fixed start-5 end-5 top-6 z-50 rounded-md bg-white/10 backdrop-blur-2xl dark:bg-gray-50/10'>
+		<header
+			className={cn(
+				Animation.fadeIn_1600,
+				'delay-500 [animation-fill-mode:backwards]',
+				'fixed start-5 end-5 top-6 z-50 rounded-md bg-white/10 backdrop-blur-2xl dark:bg-gray-50/10',
+			)}
+		>
 			<div
 				className={cn(
 					Padding.all['2_5-5-7_5'],

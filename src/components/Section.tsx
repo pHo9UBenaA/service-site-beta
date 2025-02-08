@@ -1,16 +1,38 @@
+import type { PropsWithChildren } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+import useScrollDirection from 'src/hooks/useScrollDirection';
+
 import { cn } from 'src/lib/utils';
-import { Gap, Padding, TextNeutral } from 'src/styles/constant';
+import { Animation, Gap, Padding, TextNeutral } from 'src/styles/constant';
 
 export function Section({
 	title,
 	children,
-}: {
-	title: string;
-	children: React.ReactNode;
-}) {
+}: PropsWithChildren<{ title: string }>) {
+	const { ref, inView } = useInView({
+		threshold: 0.2,
+		triggerOnce: true,
+	});
+
+	const scrollDirection = useScrollDirection();
+
+	const mdSlideInAnimation =
+		scrollDirection === 'down'
+			? Animation.mdSlideInFromBottom_800
+			: Animation.mdSlideInFromTop_800;
+
 	return (
 		<section
-			className={cn(Gap['7_5-12_5'], Padding.x['7-13-20'], 'grid grid-cols-1')}
+			ref={ref}
+			className={cn(
+				Gap['7_5-12_5'],
+				Padding.x['7-13-20'],
+				inView
+					? `${Animation.slideInFromLeft_800} ${mdSlideInAnimation}`
+					: 'opacity-0',
+				'grid grid-cols-1',
+			)}
 		>
 			<h2
 				className={cn(TextNeutral[700], 'tracking-wide')}
